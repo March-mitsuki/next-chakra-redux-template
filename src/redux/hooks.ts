@@ -18,3 +18,6 @@ export const useAppShallowEqualSelector: TypedUseSelectorHook<RootState> = (
 export const useCounter = () => {
   return useAppShallowEqualSelector((state) => state.counter);
 };
+export const useI18n = () => {
+  return useAppShallowEqualSelector((state) => state.i18n);
+};

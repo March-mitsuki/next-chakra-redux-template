@@ -3,8 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ChiyoCast - Get your stream without the hassle",
-  description: "ChiyoCast - Get your stream without the hassle",
+  title: "NextJS + Chakra UI + Redux + TypeScript",
+  description: "NextJS + Chakra UI + Redux + TypeScript template",
 };
 
 export default function RootLayout({
