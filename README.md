@@ -16,9 +16,9 @@ Use nextjs-13 appDir.
 git clone https://github.com/March-mitsuki/next-chakra-redux-template.git
 ```
 
-2. cd and remove old git.
+2. cd and remove old git and license file.(This repo has a MIT LICENSE existed)
 ```sh
-cd next-chakra-redux-template && rm -rf .git
+cd next-chakra-redux-template && rm -rf .git && rm LICENSE
 ```
 
 3. install & start
@@ -31,3 +31,5 @@ yarn
 # OR
 npm install
 ```
+
+4. do not foget to change the package name in package.json
