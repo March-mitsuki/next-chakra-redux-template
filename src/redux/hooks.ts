@@ -15,6 +15,6 @@ export const useAppShallowEqualSelector: TypedUseSelectorHook<RootState> = (
   return useAppSelector(selector, shallowEqual);
 };
 
-export const useAppMode = () => {
-  return useAppShallowEqualSelector((state) => state.appMode);
+export const useCounter = () => {
+  return useAppShallowEqualSelector((state) => state.counter);
 };

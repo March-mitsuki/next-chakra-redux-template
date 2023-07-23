@@ -1,8 +1,8 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import appModeReducer from "./slices/appMode";
+import counterReducer from "./slices/counter";
 
 const rootReducer = combineReducers({
-  appMode: appModeReducer,
+  counter: counterReducer,
 });
 
 const store = configureStore({

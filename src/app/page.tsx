@@ -1,35 +1,48 @@
 "use client";
 
-import { useAppDispatch } from "@/redux/hooks";
-import { appModeActions } from "@/redux/slices/appMode";
-import { AspectRatio, Box, Center, Stack } from "@chakra-ui/react";
-import { animate } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useAppDispatch, useCounter } from "@/redux/hooks";
+import { counterActions } from "@/redux/slices/counter";
+import {
+  Box,
+  Button,
+  Center,
+  Code,
+  Stack,
+  Text,
+  Tooltip,
+} from "@chakra-ui/react";
 
 export default function Home() {
-  const contentsRef = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    contentsRef;
-    dispatch(appModeActions.changeIsInit(true));
-  }, []);
-
+  const { count } = useCounter();
   return (
     <main>
-      <Box>
-        <Box>Header</Box>
-        <Stack px="64px">
-          <Center ref={contentsRef}>
-            <AspectRatio ratio={32 / 9} w="full" bg="gray.400">
-              <Box></Box>
-            </AspectRatio>
-          </Center>
-          <AspectRatio ratio={16 / 9} w="50%" bg="gray.400">
-            <Box></Box>
-          </AspectRatio>
-        </Stack>
-        <Box>Footer</Box>
+      <Box h="100vh">
+        <Center w="full" h="full">
+          <Stack>
+            <Text fontSize="3xl" fontWeight="bold" mb={20}>
+              NextJS + Chakra UI + Redux + TypeScript
+            </Text>
+            <Center>
+              <Text>{count}</Text>
+            </Center>
+            <Stack>
+              <Tooltip label="Increament count">
+                <Button onClick={() => dispatch(counterActions.increment())}>
+                  Increment
+                </Button>
+              </Tooltip>
+              <Tooltip label="Decreament count">
+                <Button onClick={() => dispatch(counterActions.decrement())}>
+                  Decrement
+                </Button>
+              </Tooltip>
+            </Stack>
+            <Text textAlign="center" mt={10}>
+              Try To Change <Code>./src/app/page.tsx</Code>
+            </Text>
+          </Stack>
+        </Center>
       </Box>
     </main>
   );
